@@ -29,11 +29,29 @@
         return;
     }
     
-#warning This is a demo ProductId, in your own app please make sure to use your own ProductId
-    sdk.appID = @"yourAppId"; // your app id, you must copy it from your account on Magnite portal
-    sdk.devID = @"yourDeveloperId"; // optional
     sdk.testAdsEnabled = YES;
     sdk.preferences = [MGNISDKPreferences prefrencesWithAge:22 andGender:MGNIGender_Male];
+    
+    __weak typeof(self)weakSelf = self;
+#warning This is a demo ProductId, in your own app please make sure to use your own ProductId
+    [sdk initializeWithAppID:@"yourAppId" completion:^(NSError *error) { // your app id, you must copy it from your account on Magnite portal
+        __strong typeof(weakSelf)strongSelf = weakSelf;
+        if (error == nil) {
+            [strongSelf createAds];
+        }
+        else {
+            NSLog(@"Failed to initialize Magnite SDK with error: %@", error.localizedDescription);
+        }
+    }];
+}
+
+- (void)createAds {
+    /*
+     Init of the Magnite interstitials
+     */
+    magniteAd_autoload = [[MGNIAd alloc] init];
+    magniteAd_loadShow = [[MGNIAd alloc] init];
+    magniteAd_rewardedVideo = [[MGNIAd alloc] init];
     
     // loading the Magnite Ad
     [magniteAd_autoload loadAdWithDelegate:self];
@@ -50,10 +68,10 @@
     }
     
     /*
-     load the Magnite fixed position banner - in (0, 200)
+     load the Magnite fixed position banner
      */
     if (magniteBanner_fixed == nil) {
-        if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
             MGNIBannerSize bannerSize = MGNIBannerSizePortrait768x90;
             CGFloat halfX = (self.view.bounds.size.width - bannerSize.size.width) / 2.0f;
             magniteBanner_fixed = [[MGNIBannerView alloc] initWithSize:bannerSize
@@ -76,13 +94,6 @@
     [self initMagniteSDK];
     
     [self.btnFixedBannerSize setTitle:UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad ? @"768x90" : @"320x50" forState:UIControlStateNormal];
-    
-    /*
-     Init of the Magnite interstitials
-     */
-    magniteAd_autoload = [[MGNIAd alloc] init];
-    magniteAd_loadShow = [[MGNIAd alloc] init];
-    magniteAd_rewardedVideo = [[MGNIAd alloc] init];
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {

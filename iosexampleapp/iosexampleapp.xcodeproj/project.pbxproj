@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,7 +14,6 @@
 		49329C702190701100069B07 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49329C6F2190701100069B07 /* SystemConfiguration.framework */; };
 		49329C722190706900069B07 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49329C712190706900069B07 /* CoreTelephony.framework */; };
 		49329C742190708500069B07 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49329C732190708400069B07 /* AdSupport.framework */; };
-		4B405BD933B3C47CB8C58FAC /* libPods-iosexampleapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5277C31E72E5050C869F8396 /* libPods-iosexampleapp.a */; };
 		50CFD3C61A277508000790CA /* NativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CFD3C51A277508000790CA /* NativeViewController.m */; };
 		88F5AAD318B4AC560006D578 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88F5AAD118B4AC560006D578 /* InfoPlist.strings */; };
 		88F5AAD518B4AC560006D578 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F5AAD418B4AC560006D578 /* main.m */; };
@@ -34,7 +33,6 @@
 		49329C732190708400069B07 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		50CFD3C41A277508000790CA /* NativeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeViewController.h; sourceTree = "<group>"; };
 		50CFD3C51A277508000790CA /* NativeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeViewController.m; sourceTree = "<group>"; };
-		5277C31E72E5050C869F8396 /* libPods-iosexampleapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iosexampleapp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88F5AAC518B4AC560006D578 /* iosexampleapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosexampleapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88F5AAD018B4AC560006D578 /* iosexampleapp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iosexampleapp-Info.plist"; sourceTree = "<group>"; };
 		88F5AAD218B4AC560006D578 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 				49329C722190706900069B07 /* CoreTelephony.framework in Frameworks */,
 				49329C702190701100069B07 /* SystemConfiguration.framework in Frameworks */,
 				491E662925D4604700E26851 /* AppTrackingTransparency.framework in Frameworks */,
-				4B405BD933B3C47CB8C58FAC /* libPods-iosexampleapp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,9 +69,15 @@
 				49329C732190708400069B07 /* AdSupport.framework */,
 				49329C712190706900069B07 /* CoreTelephony.framework */,
 				49329C6F2190701100069B07 /* SystemConfiguration.framework */,
-				5277C31E72E5050C869F8396 /* libPods-iosexampleapp.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49E519FC9F5CAAC547F8683C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		88F5AABC18B4AC560006D578 = {
@@ -83,6 +86,7 @@
 				88F5AACE18B4AC560006D578 /* iosexampleapp */,
 				88F5AAC618B4AC560006D578 /* Products */,
 				49329C6721906B8A00069B07 /* Frameworks */,
+				49E519FC9F5CAAC547F8683C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,11 +134,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88F5AAFA18B4AC560006D578 /* Build configuration list for PBXNativeTarget "iosexampleapp" */;
 			buildPhases = (
-				392386BC328B0FD29B48C4E5 /* [CP] Check Pods Manifest.lock */,
 				88F5AAC118B4AC560006D578 /* Sources */,
 				88F5AAC218B4AC560006D578 /* Frameworks */,
 				88F5AAC318B4AC560006D578 /* Resources */,
-				88669C5FC39FD27AB2C039A9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,7 +153,7 @@
 		88F5AABD18B4AC560006D578 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = STA;
+				CLASSPREFIX = "";
 				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = Magnite;
 				TargetAttributes = {
@@ -166,7 +168,7 @@
 				};
 			};
 			buildConfigurationList = 88F5AAC018B4AC560006D578 /* Build configuration list for PBXProject "iosexampleapp" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -196,49 +198,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		392386BC328B0FD29B48C4E5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iosexampleapp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		88669C5FC39FD27AB2C039A9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iosexampleapp/Pods-iosexampleapp-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/MagniteSDK/MagniteSDK.framework/MagniteSDK",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MagniteSDK.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iosexampleapp/Pods-iosexampleapp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		88F5AAC118B4AC560006D578 /* Sources */ = {
@@ -388,7 +347,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "MagniteSDK Sample";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "${SRCROOT}";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.magnite.iosexampleapp;
@@ -423,7 +385,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "MagniteSDK Sample";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "${SRCROOT}";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.magnite.iosexampleapp;
